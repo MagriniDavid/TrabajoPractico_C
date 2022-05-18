@@ -1,38 +1,43 @@
 # depslib dependency file v1.0
-1652899005 source:d:\disco d\varios\estudios\unlz\materias\fundamentos de computadores digitales\2022\magrini_david_tpn2\tp n2\main.c
+1652906058 source:d:\disco d\varios\estudios\unlz\materias\fundamentos de computadores digitales\2022\magrini_david_tpn2\tp n2\main.c
 	<stdio.h>
 	<stdlib.h>
 	<stdbool.h>
 	<string.h>
+	<wchar.h>
+	<locale.h>
 	"menu.h"
 	"definiciones.h"
 	"orden.h"
 
 1652655741 source:d:\disco d\varios\estudios\unlz\materias\fundamentos de computadores digitales\2022\magrini_david_tpn2\tp n2\utilidades.c
 
-1652899056 source:d:\disco d\varios\estudios\unlz\materias\fundamentos de computadores digitales\2022\magrini_david_tpn2\tp n2\definiciones.c
+1652906138 source:d:\disco d\varios\estudios\unlz\materias\fundamentos de computadores digitales\2022\magrini_david_tpn2\tp n2\definiciones.c
 	<stdio.h>
 	<stdlib.h>
 	<stdbool.h>
 	"definiciones.h"
 
-1652899198 source:d:\disco d\varios\estudios\unlz\materias\fundamentos de computadores digitales\2022\magrini_david_tpn2\tp n2\menu.c
+1652904618 source:d:\disco d\varios\estudios\unlz\materias\fundamentos de computadores digitales\2022\magrini_david_tpn2\tp n2\menu.c
 	<stdio.h>
 	<stdlib.h>
 	<stdbool.h>
 	"menu.h"
-	<conio.h>
+	<wchar.h>
+	<locale.h>
 
-1652883583 source:d:\disco d\varios\estudios\unlz\materias\fundamentos de computadores digitales\2022\magrini_david_tpn2\tp n2\orden.c
+1652911179 source:d:\disco d\varios\estudios\unlz\materias\fundamentos de computadores digitales\2022\magrini_david_tpn2\tp n2\orden.c
 	<stdio.h>
 	<stdlib.h>
 	<stdbool.h>
+	"definiciones.h"
 	"orden.h"
-	<conio.h>
+	<wchar.h>
+	<locale.h>
 
-1652835097 d:\disco d\varios\estudios\unlz\materias\fundamentos de computadores digitales\2022\magrini_david_tpn2\tp n2\menu.h
+1652908443 d:\disco d\varios\estudios\unlz\materias\fundamentos de computadores digitales\2022\magrini_david_tpn2\tp n2\menu.h
 
-1652898730 d:\disco d\varios\estudios\unlz\materias\fundamentos de computadores digitales\2022\magrini_david_tpn2\tp n2\definiciones.h
+1652906138 d:\disco d\varios\estudios\unlz\materias\fundamentos de computadores digitales\2022\magrini_david_tpn2\tp n2\definiciones.h
 
-1652656431 d:\disco d\varios\estudios\unlz\materias\fundamentos de computadores digitales\2022\magrini_david_tpn2\tp n2\orden.h
+1652910218 d:\disco d\varios\estudios\unlz\materias\fundamentos de computadores digitales\2022\magrini_david_tpn2\tp n2\orden.h
 

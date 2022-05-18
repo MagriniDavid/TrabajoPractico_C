@@ -12,4 +12,5 @@ struct estructura_ferrocarril {
 };
 void listarCoches (trenes tren);
 
+
 #endif // DEFINICIONES_H_INCLUDED

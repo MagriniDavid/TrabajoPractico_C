@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1652906058 source:d:\disco d\varios\estudios\unlz\materias\fundamentos de computadores digitales\2022\magrini_david_tpn2\tp n2\main.c
+1653083037 source:d:\disco d\varios\estudios\unlz\materias\fundamentos de computadores digitales\2022\magrini_david_tpn2\tp n2\main.c
 	<stdio.h>
 	<stdlib.h>
 	<stdbool.h>
@@ -12,13 +12,13 @@
 
 1652655741 source:d:\disco d\varios\estudios\unlz\materias\fundamentos de computadores digitales\2022\magrini_david_tpn2\tp n2\utilidades.c
 
-1652906138 source:d:\disco d\varios\estudios\unlz\materias\fundamentos de computadores digitales\2022\magrini_david_tpn2\tp n2\definiciones.c
+1653077193 source:d:\disco d\varios\estudios\unlz\materias\fundamentos de computadores digitales\2022\magrini_david_tpn2\tp n2\definiciones.c
 	<stdio.h>
 	<stdlib.h>
 	<stdbool.h>
 	"definiciones.h"
 
-1652904618 source:d:\disco d\varios\estudios\unlz\materias\fundamentos de computadores digitales\2022\magrini_david_tpn2\tp n2\menu.c
+1653082233 source:d:\disco d\varios\estudios\unlz\materias\fundamentos de computadores digitales\2022\magrini_david_tpn2\tp n2\menu.c
 	<stdio.h>
 	<stdlib.h>
 	<stdbool.h>
@@ -26,7 +26,7 @@
 	<wchar.h>
 	<locale.h>
 
-1652911179 source:d:\disco d\varios\estudios\unlz\materias\fundamentos de computadores digitales\2022\magrini_david_tpn2\tp n2\orden.c
+1653011872 source:d:\disco d\varios\estudios\unlz\materias\fundamentos de computadores digitales\2022\magrini_david_tpn2\tp n2\orden.c
 	<stdio.h>
 	<stdlib.h>
 	<stdbool.h>
@@ -35,9 +35,9 @@
 	<wchar.h>
 	<locale.h>
 
-1652908443 d:\disco d\varios\estudios\unlz\materias\fundamentos de computadores digitales\2022\magrini_david_tpn2\tp n2\menu.h
+1653081947 d:\disco d\varios\estudios\unlz\materias\fundamentos de computadores digitales\2022\magrini_david_tpn2\tp n2\menu.h
 
-1652906138 d:\disco d\varios\estudios\unlz\materias\fundamentos de computadores digitales\2022\magrini_david_tpn2\tp n2\definiciones.h
+1653077193 d:\disco d\varios\estudios\unlz\materias\fundamentos de computadores digitales\2022\magrini_david_tpn2\tp n2\definiciones.h
 
-1652910218 d:\disco d\varios\estudios\unlz\materias\fundamentos de computadores digitales\2022\magrini_david_tpn2\tp n2\orden.h
+1653077193 d:\disco d\varios\estudios\unlz\materias\fundamentos de computadores digitales\2022\magrini_david_tpn2\tp n2\orden.h
 

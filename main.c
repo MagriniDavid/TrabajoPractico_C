@@ -13,12 +13,12 @@ FILE *bajada;
 int main()
 {
     setlocale(LC_CTYPE, "Spanish");
+    presentacion();
     bool validar = false;
     bool seguir = true;
-    int opc,verificar;
-    int busc;
-    int *buscador;
-    trenes vTrenes[TAM],vTrenes_n_op[TAM];
+    int opc;
+    trenes vTrenes[TAM];
+
     do
     {
         menu();
@@ -58,9 +58,7 @@ int main()
             }
             else
             {
-                printf("\t \n---------------------------------------------------------------------------\n");
-                printf("Error..Para ingresar a esta opción, primero debe ingresar los datos.\n");
-                printf("\t \n---------------------------------------------------------------------------\n");
+                Error();
             }
             break;
         case ORDENAR_X_ANIO:
@@ -75,12 +73,11 @@ int main()
                     listarCoches(vTrenes[i]);
                     printf("-------------------------\n");
                 }
+
             }
             else
             {
-                printf("\t \n---------------------------------------------------------------------------\n");
-                printf("Error..Para ingresar a esta opción, primero debe ingresar los datos.\n");
-                printf("\t \n---------------------------------------------------------------------------\n");
+                Error();
             }
             break;
         case ORDENAR_X_MATRICULA:
@@ -98,156 +95,113 @@ int main()
             }
             else
             {
-                printf("\t \n---------------------------------------------------------------------------\n");
-                printf("Error..Para ingresar a esta opción, primero debe ingresar los datos.\n");
-                printf("\t \n---------------------------------------------------------------------------\n");
+                Error();
             }
             break;
         case BUSCAR:
             if(validar!=false)
             {
-//                puts( "Indique la matrícula a encontrar:" );
-//                scanf("%d",&busc);
-//                buscador = bsearch(&busc,vTrenes,TAM, sizeof(vTrenes[0]),comparar);
-//                if(buscador)
-//                {
-//                int i = buscador - vTrenes;
-//                printf("%d se encuentra en la posición %d\n", busc, i);
-//                }
-//                else
-//                {
-//                    printf("%d no se encuentra entre los datos\n", busc);
-//                }
-//
-
-            }
-
-        else
-        {
-            printf("\t \n---------------------------------------------------------------------------\n");
-            printf("Error..Para ingresar a esta opción, primero debe ingresar los datos.\n");
-            printf("\t \n---------------------------------------------------------------------------\n");
-        }
-        break;
-    case CALCULAR_PASAJERO:
-        if(validar!=false)
-        {
-            int masAntiguo =0;
-            int antiguedad = vTrenes[0]->anio_fabricacion;
-            for(int i=0; i<TAM; i++)
-            {
-                if(antiguedad>vTrenes[i]->anio_fabricacion)
-                {
-                    antiguedad = vTrenes[i]->anio_fabricacion;
-                    masAntiguo = i;
-
-                }
-            }
-            printf("------------------------------------------\n");
-            printf("El tren mas antiguo es : %d\n");
-            listarCoches(vTrenes[masAntiguo]);
-            printf("------------------------------------------\n");
-
-        }
-        else
-        {
-            printf("\t \n---------------------------------------------------------------------------\n");
-            printf("Error..Para ingresar a esta opción, primero debe ingresar los datos.\n");
-            printf("\t \n---------------------------------------------------------------------------\n");
-        }
-        break;
-    case CALCULAR_ASIENTOS:
-        if(validar!=false)
-        {
-            int total=0;
-            for(int i =0; i<TAM; i++)
-            {
-                total=total+vTrenes[i]->cant_asientos;
-            }
-            printf("------------------------------------------\n");
-            printf("El total de asientos es de: %d\n",total);
-            printf("------------------------------------------\n");
-        }
-        else
-        {
-            printf("\t \n---------------------------------------------------------------------------\n");
-            printf("Error..Para ingresar a esta opción, primero debe ingresar los datos.\n");
-            printf("\t \n---------------------------------------------------------------------------\n");
-        }
-        break;
-    case BAJAR_ARCHIVO:
-        if(validar!=false)
-        {
-            printf("Bajando listado de trenes que no estan operando.....\n");
-            bajada = fopen("choches_sin_operar.bin","w+b");
-            if(bajada)
-            {
-                printf("\nArhivo datos_coches.bin abierto\n");
+                char matri[TAM];
+                printf("Ingrese la matrícula que desea buscar: ");
+                scanf("%s",&matri);
                 for(int i=0; i<TAM; i++)
                 {
-                    if(vTrenes[i]->operativo =='NO')
+                    if(strcmp(matri,vTrenes[i]->matricula)==0)
                     {
-                        fputs(vTrenes[i]->matricula,bajada);
-                        fprintf(bajada,"\n");
-                        fputs(vTrenes[i]->anio_fabricacion,bajada);
-                        fprintf(bajada,"\n");
-                        fputs(vTrenes[i]->cant_asientos,bajada);
-                        fprintf(bajada,"\n");
-                        fputs(vTrenes[i]->operativo,bajada);
+                        listarCoches(vTrenes[i]);
+                        printf("\n");
+                    }
+                }
+
+            }
+
+
+            else
+            {
+                Error();
+            }
+            break;
+        case CALCULAR_PASAJERO:
+            if(validar!=false)
+            {
+                int masAntiguo =0;
+                int antiguedad = vTrenes[0]->anio_fabricacion;
+                for(int i=0; i<TAM; i++)
+                {
+                    if(antiguedad>vTrenes[i]->anio_fabricacion)
+                    {
+                        antiguedad = vTrenes[i]->anio_fabricacion;
+                        masAntiguo = i;
+
+                    }
+                }
+                printf("------------------------------------------\n");
+                printf("El tren mas antiguo es : \n");
+                listarCoches(vTrenes[masAntiguo]);
+                printf("------------------------------------------\n");
+
+            }
+            else
+            {
+                Error();
+            }
+            break;
+        case CALCULAR_ASIENTOS:
+            if(validar!=false)
+            {
+                int total=0;
+                for(int i =0; i<TAM; i++)
+                {
+                    total=total+vTrenes[i]->cant_asientos;
+                }
+                printf("------------------------------------------\n");
+                printf("El total de asientos es de: %d\n",total);
+                printf("------------------------------------------\n");
+            }
+            else
+            {
+                Error();
+            }
+            break;
+        case BAJAR_ARCHIVO:
+            if(validar!=false)
+            {
+                trenes tren;
+                bajada= fopen("bajada_datos.txt","w");
+
+                if (bajada==NULL)  exit(1);
+                for (int i=0; i<TAM; i++)
+                {
+                    if (tren[i].operativo != 'si' || tren[i].operativo!='SI'|| tren[i].operativo!='Si')
+                    {
+                        fprintf(bajada,"Coche N°: \n",i+1);
+                        fprintf(bajada,"Matricula: %s\n",tren[i].matricula);
+                        fprintf(bajada,"Modelo de fabricacion: %d\n",tren[i].anio_fabricacion);
+                        fprintf(bajada,"Cantidad de asientos: %d\n",tren[i].cant_asientos);
+                        fprintf(bajada,"Operativo: %s\n",tren[i].operativo);
                         fprintf(bajada,"\n");
                         fprintf(bajada,"\n");
                     }
-
                 }
-                puts("Registros Guardados Exitosamente...");
-                fclose(bajada);
-                printf("\tArchivo cerrado\n");
-            }
-//                printf("\nDesea verificar la informacion subida?\n");
-//                printf("PRESIONE 1 PARA VERIFICAR O 2 PARA VOLVER AL MENU:\n");
-//                scanf("%d",verificar);
-//                if(verificar==1)
-//                {
-//                    printf("Intentando abrir el archivo...\n");
-//                    bajada = fopen("choches_sin_operar","rb");
-//                    if (archivo)
-//                    {
-//                        printf("Archivo abierto \n");
-//                        for (int i=0; i<TAM; i++)
-//                        {
-//                            vTrenes_n_op[i] = malloc(sizeof(*vTrenes_n_op[i]));
-//                            printf("Cargando el registro número: %d \n",i+1);
-//                            fread(vTrenes_n_op[i],sizeof(*vTrenes_n_op[i]),1,bajada);
-//                        }
-//                        fclose(bajada);
-//                        printf("Archivo cerrado \n");
-//                    }
-//                }
-//                else
-//                {
-//                    return opc;
-//                }
-        }
-        else
-        {
-            printf("\t \n---------------------------------------------------------------------------\n");
-            printf("Error..Para ingresar a esta opción, primero debe ingresar los datos.\n");
-            printf("\t \n---------------------------------------------------------------------------\n");
-        }
-        break;
-    case SALIR:
-        seguir = false;
-        printf("\nSaliendo...");
-        break;
-    default:
-        printf("\t \n---------------------------------------------------------------------------\n");
-        printf("Error..número de opción no encontrado.\n");
-        printf("\t \n---------------------------------------------------------------------------\n");
-        break;
-    }
-}
-while(seguir!=false);
 
-return 0;
+                fclose(bajada);
+                printf("\t*****   DATOS GUARDADOS EN .txt    *****\n\n");
+            }
+            else
+            {
+                Error();
+            }
+            break;
+        case SALIR:
+            seguir = false;
+            printf("\nSaliendo...");
+            break;
+        default:
+            Error1();
+            break;
+        }
+    }
+    while(seguir!=false);
+    return 0;
 
 }

@@ -5,7 +5,6 @@
 #include "orden.h"
 #include <wchar.h>
 #include <locale.h>
-
 int ordenxAnio_Asientos(const void *trenA, const void *trenB)
 {
     trenes t1 = *(trenes *)trenA;
@@ -36,17 +35,19 @@ int ordenxAnio_Asientos(const void *trenA, const void *trenB)
             return 0;
         }
     }
+    return 0;
 }
 
 int ordenxMatricula(const void *trenC, const void *trenD)
 {
     trenes t3 = *(trenes *)trenC;
     trenes t4 = *(trenes *)trenD;
-    if(t3->matricula > t4->matricula)
+    int num=strcmp(t3->matricula,t4->matricula);
+    if(num>0)
     {
         return 1;
     }
-    else if(t3->matricula < t4->matricula)
+    else if(num<0)
     {
         return -1;
     }
@@ -59,14 +60,23 @@ int ordenxMatricula(const void *trenC, const void *trenD)
 int comparar(const void *tren1, const void *tren2)
 {
     int *pi = (int *)tren1;
-	int *pj = (int *)tren2;
+    int *pj = (int *)tren2;
     return *pi - *pj;
-	if (*pi % 2 == 0 && *pj %2 != 0)
-		{return -1;}
-	if (*pj % 2 == 0 && *pi %2 != 0)
-		{return 1;}
-	if (*pj % 2 == 0 && *pi %2 == 0)
-		{return *pi - *pj;}
-	else if (*pj % 2 != 0 && *pi %2 != 0)
-		{return *pj - *pi;}
+    if (*pi % 2 == 0 && *pj %2 != 0)
+    {
+        return -1;
+    }
+    if (*pj % 2 == 0 && *pi %2 != 0)
+    {
+        return 1;
+    }
+    if (*pj % 2 == 0 && *pi %2 == 0)
+    {
+        return *pi - *pj;
+    }
+    else if (*pj % 2 != 0 && *pi %2 != 0)
+    {
+        return *pj - *pi;
+    }
 }
+

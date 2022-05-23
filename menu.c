@@ -4,7 +4,6 @@
 #include "menu.h"
 #include <wchar.h>
 #include <locale.h>
-
 void menu()
 {
     printf(" 1)Ingresar coches de pasajeros: ");
@@ -18,5 +17,24 @@ void menu()
     printf("\n 9)Salir.\n ");
 }
 
+void Error()
+{
+    printf("\t \n---------------------------------------------------------------------------\n");
+    printf("Error..Para ingresar a esta opción, primero debe ingresar los datos.\n");
+    printf("\t \n---------------------------------------------------------------------------\n");
+}
+void Error1()
+{
+    printf("\t \n---------------------------------------------------------------------------\n");
+    printf("Error..se ingresó mal el dato.\n");
+    printf("\t \n---------------------------------------------------------------------------\n");
+}
+void presentacion(){
+printf("======================== TRABAJO PRÁCTICO N°2 UNLZ ================================\n");
+printf("==> MATERIA: FUNDAMENTOS DE LOS COMPUTADORES DIGITALES\n");
+printf("==> ALUMNO: MAGRINI DAVID\n");
+printf("***********************************************************************************\n");
+printf("\n");
 
+}
 

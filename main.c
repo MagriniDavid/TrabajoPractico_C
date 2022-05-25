@@ -172,7 +172,7 @@ int main()
                 if (bajada==NULL)  exit(1);
                 for (int i=0; i<TAM; i++)
                 {
-                    if (tren[i].operativo != 'si' || tren[i].operativo!='SI'|| tren[i].operativo!='Si')
+                    if (strcmp("No",tren[i].operativo)== 0)
                     {
                         fprintf(bajada,"Coche N°: \n",i+1);
                         fprintf(bajada,"Matricula: %s\n",tren[i].matricula);
